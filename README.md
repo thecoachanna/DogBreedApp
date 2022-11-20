@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Challenge
 
-First, run the development server:
+1 - request 3 random dog breeds from the url, https://dog.ceo/api/breeds/image/random
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+2 - In a row, render images (sized 240px x 240px) of all 3 dog breeds along with the name of the breed, spelled out with no dashes and capitalized first letter of each word in the name. (e.g. "blood-hound" would be "Blood Hound")
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Bonus
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1 - display how many seconds it took to fetch each breed from the API (e.g .012 seconds).  Display it underneath the picture of each breed.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+2 - make the UI responsive such that, when the screen is too narrow, the dog breeds are rendered in a column
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3 - create a separate "DogBreed" component that renders each dog breed.  The DogBreed component should take 3 props: imageUrl, name, and number of seconds to load the data for the given breed. The DogBreed component should get rendered from within the index.js file.
 
-## Learn More
+## Resources
 
-To learn more about Next.js, take a look at the following resources:
+NextJS Docs
+https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Query in NextJS
+https://www.webdevtutor.net/blog/how-to-get-query-parameters-from-a-url-in-nextjs
