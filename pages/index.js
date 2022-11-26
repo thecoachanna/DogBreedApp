@@ -2,22 +2,43 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-const defaultEndpoint = "https://dog.ceo/api/breeds/image/random/3";
+const defaultEndpoint = "https://dog.ceo/api/breeds/image/random/9";
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
-  const { message: data } = await res.json();
+  const { message: dogs } = await res.json();
   
   // const res = await fetch(`https://dog.ceo/api/breeds/${breed}/random/3`);
   // const breed = req.query['breed'].toString()
 
   return {
-    props: { data },
+    props: { dogs },
   };
 }
 
-export default function Home({ data }) {
-  console.log("data", data);
+export default function Home({ dogs }) {
+
+  const RenderDogData = (data) => {
+    return data.map((dog, idx) => {
+      const url = new URL(dog);
+      const path = url.pathname;
+      const str = path.split('/')
+      console.log('path ===', str);
+      return (
+        <div>
+          <Image
+                id={idx}
+                src={dog}
+                alt={str[2] || idx}
+                width={240}
+                height={240}
+          />
+          <h5>{str[2]}</h5>
+        </div>
+      )
+    })
+  }
+  console.log('data', dogs)
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +48,22 @@ export default function Home({ data }) {
       </Head>
 
       <main>
-        <div className="grid">
+
+        {/* {dogs.map((dog, idx) => (
+            (
+              <Image
+                id={idx}
+                src={dog}
+                alt={idx}
+                width={240}
+                height={240}
+              />
+            ))
+        )} */}
+
+        {RenderDogData(dogs)}
+
+        {/* <div className="grid">
           {data.map((img) => (
             <img
               className="breed"
@@ -36,8 +72,8 @@ export default function Home({ data }) {
               width={240}
               height={240}
             />
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
       </main>
     </div>
   );
