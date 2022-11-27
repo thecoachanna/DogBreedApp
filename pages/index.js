@@ -7,9 +7,6 @@ const defaultEndpoint = "https://dog.ceo/api/breeds/image/random/9";
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
   const { message: dogs } = await res.json();
-  
-  // const res = await fetch(`https://dog.ceo/api/breeds/${breed}/random/3`);
-  // const breed = req.query['breed'].toString()
 
   return {
     props: { dogs },
@@ -22,23 +19,31 @@ export default function Home({ dogs }) {
     return data.map((dog, idx) => {
       const url = new URL(dog);
       const path = url.pathname;
-      const str = path.split('/')
-      console.log('path ===', str);
+      const breed = path.split('/')
+      const word = breed[2];
+
+      const breedName = word.replace('-', ' ').replace(/(?:^|\s)\S/g, a => a.toUpperCase());
+         
+      // const splitBreed = word.replace(/-/, ' ').charAt(0).toUpperCase()
+      // + word.slice(1);
+      // console.log(splitBreed)
+
       return (
-        <div>
+        <div key={idx}>
           <Image
                 id={idx}
                 src={dog}
-                alt={str[2] || idx}
+                alt={breedName[2] || idx}
                 width={240}
                 height={240}
           />
-          <h5>{str[2]}</h5>
+          <h4>{breedName}</h4>
+         
         </div>
       )
     })
   }
-  console.log('data', dogs)
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -49,31 +54,10 @@ export default function Home({ dogs }) {
 
       <main>
 
-        {/* {dogs.map((dog, idx) => (
-            (
-              <Image
-                id={idx}
-                src={dog}
-                alt={idx}
-                width={240}
-                height={240}
-              />
-            ))
-        )} */}
-
-        {RenderDogData(dogs)}
-
-        {/* <div className="grid">
-          {data.map((img) => (
-            <img
-              className="breed"
-              src={img}
-              alt="{breed}"
-              width={240}
-              height={240}
-            />
-          ))} */}
-        {/* </div> */}
+        <div className="grid">
+          {RenderDogData(dogs)}
+          </div>
+ 
       </main>
     </div>
   );
