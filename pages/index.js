@@ -5,15 +5,19 @@ import styles from "../styles/Home.module.css";
 const defaultEndpoint = "https://dog.ceo/api/breeds/image/random/9";
 
 export async function getServerSideProps() {
+  let time1 = performance.now();
   const res = await fetch(defaultEndpoint);
   const { message: dogs } = await res.json();
-
+  let time2 = performance.now();
+  const secs = (time2 - time1).toFixed(2);
+  console.log('time == ', secs)
+  
   return {
-    props: { dogs },
+    props: { dogs, secs }
   };
 }
 
-export default function Home({ dogs }) {
+export default function Home({ dogs, secs }) {
 
   const RenderDogData = (data) => {
     return data.map((dog, idx) => {
@@ -37,7 +41,8 @@ export default function Home({ dogs }) {
                 width={240}
                 height={240}
           />
-          <h4>{breedName}</h4>
+          <h3>{breedName}</h3>
+          <h5>Time to fetch data: {secs} ms</h5>
          
         </div>
       )
