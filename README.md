@@ -15,10 +15,26 @@
 
 3 - create a separate "DogBreed" component that renders each dog breed.  The DogBreed component should take 3 props: imageUrl, name, and number of seconds to load the data for the given breed. The DogBreed component should get rendered from within the index.js file.
 
+## Additional Items
+
+1 - fix all eslint errors (vs code should auto highlight them for you but you can also run the lint check with "npm run lint" from the cli)
+
+:white_check_mark: 2 - use the NextJS Image component to display each image
+
+:white_check_mark: 3 - display 9 breeds on page load instead of 3 + add styling
+
+4 - clicking on any of the breeds navigates you to a new page (display all images for breed)
+
+5 - hovering over the clickable breed changes the cursor to be a pointer to make it clear that the breed is clickable
+
 ## Resources
 
 NextJS Docs
 https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
 
-Query in NextJS
-https://www.webdevtutor.net/blog/how-to-get-query-parameters-from-a-url-in-nextjs
+NextJS Image Component
+https://nextjs.org/docs/api-reference/next/image
+
+NextJS Dynamic Routes
+https://nextjs.org/docs/routing/dynamic-routes
+
