@@ -10,7 +10,6 @@ export async function getServerSideProps() {
   const { message: dogs } = await res.json();
   let time2 = performance.now();
   const secs = (time2 - time1).toFixed(2);
-  console.log('time == ', secs)
   
   return {
     props: { dogs, secs }
