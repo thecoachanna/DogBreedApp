@@ -5,7 +5,7 @@
 
 :white_check_mark: 2 - In a row, render images (sized 240px x 240px) of all 3 dog breeds
 
-3 - render the name of the breed, spelled out with no dashes and capitalized first letter of each word in the name. (e.g. "blood-hound" would be "Blood Hound")
+:white_check_mark: 3 - render the name of the breed, spelled out with no dashes and capitalized first letter of each word in the name. (e.g. "blood-hound" would be "Blood Hound")
 
 ## Bonus
 
