@@ -25,7 +25,7 @@
 
 4 - clicking on any of the breeds navigates you to a new page (display all images for breed)
 
-5 - hovering over the clickable breed changes the cursor to be a pointer to make it clear that the breed is clickable
+:white_check_mark: 5 - hovering over the clickable breed changes the cursor to be a pointer to make it clear that the breed is clickable
 
 ## Resources
 
