@@ -55,8 +55,7 @@ export default function Home({ dogs, secs }) {
       <main className={styles.main}>
         <div className={styles.grid}>{RenderDogData(dogs)}</div>
       </main>
-    
-    
+     
     </div>
   );
 }

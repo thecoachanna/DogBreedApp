@@ -76,13 +76,14 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  box-shadow: 7px 7px #ae7cf3;
 }
 
 .card h2:hover,
 .card:active {
   cursor: pointer;
-  color: purple;
-  border-color: purple;
+  color: #ae7cf3;
+  border-color: #ae7cf3;
 }
 
 .card h2 {
