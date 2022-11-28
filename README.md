@@ -17,7 +17,7 @@
 
 ## Additional Items
 
-1 - fix all eslint errors (vs code should auto highlight them for you but you can also run the lint check with "npm run lint" from the cli)
+:white_check_mark: 1 - fix all eslint errors (vs code should auto highlight them for you but you can also run the lint check with "npm run lint" from the cli)
 
 :white_check_mark: 2 - use the NextJS Image component to display each image
 
