@@ -1,6 +1,23 @@
 import Image from "next/image";
-import Head from 'next/head'
+import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import DogBreed from "../components/DogBreed";
+
+export default function Home({ dogs, secs }) {
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>Dog Breed App</title>
+        <meta name="description" content="Dog Breeds" />
+      </Head>
+
+      <main className={styles.main}>
+        <h1>Dog Breed App</h1>
+        <div className={styles.grid}>{renderDogData(dogs, secs)}</div>
+      </main>
+    </div>
+  );
+}
 
 const defaultEndpoint = "https://dog.ceo/api/breeds/image/random/9";
 
@@ -16,46 +33,16 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ dogs, secs }) {
-  const RenderDogData = (data) => {
-    return data.map((dog, idx) => {
-      const url = new URL(dog);
-      const path = url.pathname;
-      const breed = path.split("/");
-      const word = breed[2];
-      const breedName = word
-        .replace("-", " ")
-        .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
+const renderDogData = (data, secs) => {
+  return data.map((dog, idx) => {
+    const url = new URL(dog);
+    const path = url.pathname;
+    const breed = path.split("/");
+    const word = breed[2];
+    const breedName = word
+      .replace("-", " ")
+      .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
-      return (
-        
-          <div key={idx} className={styles.card}>
-            <Image
-              id={idx}
-              src={dog}
-              alt={breedName[2] || idx}
-              width={240}
-              height={240}
-            />
-
-            <h2 className={styles.title}>{breedName}</h2>
-            <p>Time to fetch data: {secs} ms</p>
-          </div>
-      );
-    });
-  };
-
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Dog Breed App</title>
-        <meta name="description" content="Dog Breeds" />
-      </Head>
-          
-      <main className={styles.main}>
-        <div className={styles.grid}>{RenderDogData(dogs)}</div>
-      </main>
-     
-    </div>
-  );
-}
+    return <DogBreed key={dog} secs={secs} name={breedName} imageUrl={dog} />;
+  });
+};

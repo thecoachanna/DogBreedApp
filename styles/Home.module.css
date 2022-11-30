@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.main h1 {
+  color: #007ea7;
+  font-size: 2.5rem;
+}
+
 .footer {
   display: flex;
   flex: 1;
@@ -76,14 +81,14 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
-  box-shadow: 7px 7px #ae7cf3;
+  box-shadow: 7px 7px #E1E6E1;
 }
 
 .card h2:hover,
 .card:active {
   cursor: pointer;
-  color: #ae7cf3;
-  border-color: #ae7cf3;
+  color: #007ea7;
+  border-color: #007ea7;
 }
 
 .card h2 {
