@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 const DogBreed = ({secs, name, imageUrl}) => {
   return ( 
+    <>
+      
     <div className={styles.grid}>
     <div className={styles.card}>
             <Image
@@ -21,6 +23,7 @@ const DogBreed = ({secs, name, imageUrl}) => {
       <p>Time to fetch data: {secs} ms</p>
       </div>
       </div>
+      </>
    );
 }
  
