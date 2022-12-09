@@ -13,7 +13,7 @@
 
 :white_check_mark: 2 - display how many seconds it took to fetch each breed from the API (e.g .012 seconds).  Display it underneath the picture of each breed.
 
-3 - create a separate "DogBreed" component that renders each dog breed.  The DogBreed component should take 3 props: imageUrl, name, and number of seconds to load the data for the given breed. The DogBreed component should get rendered from within the index.js file.
+:white_check_mark: 3 - create a separate "DogBreed" component that renders each dog breed.  The DogBreed component should take 3 props: imageUrl, name, and number of seconds to load the data for the given breed. The DogBreed component should get rendered from within the index.js file.
 
 ## Additional Items
 
@@ -23,7 +23,7 @@
 
 :white_check_mark: 3 - display 9 breeds on page load instead of 3 + add styling
 
-4 - clicking on any of the breeds navigates you to a new page (display all images for breed)
+:white_check_mark: 4 - clicking on any of the breeds navigates you to a new page (display all images for breed)
 
 :white_check_mark: 5 - hovering over the clickable breed changes the cursor to be a pointer to make it clear that the breed is clickable
 
