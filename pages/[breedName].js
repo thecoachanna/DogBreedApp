@@ -8,14 +8,6 @@ const Breed = ({ dogs }) => {
   const router = useRouter();
   const { breedName } = router.query;
 
-  // const res = await fetch(`https://dog.ceo/api/breed/${breedName}/images`);
-  // const { message: dogs } = await res.json();
-
-  // // mounts and unmounts
-  // React.useEffect(() => {
-
-  // }, [])
-
 
   return <div className={styles.grid}>{renderDogData(dogs, breedName)}</div>;
 };
