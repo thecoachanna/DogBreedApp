@@ -27,6 +27,10 @@
 
 :white_check_mark: 5 - hovering over the clickable breed changes the cursor to be a pointer to make it clear that the breed is clickable
 
+## Screenshot
+
+![screenshot](./public/screenshot.png)
+
 ## Resources
 
 NextJS Docs
